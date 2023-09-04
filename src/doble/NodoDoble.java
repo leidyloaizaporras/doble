@@ -6,7 +6,7 @@
 package doble;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.NoSuchElementException;  
 
 public class NodoDoble<T> implements Iterable<T> {
 
@@ -26,7 +26,7 @@ public class NodoDoble<T> implements Iterable<T> {
         }
     }
 
-    // 1. Crear una lista vacía
+    //  Crear una lista vacía
     public NodoDoble() {
         inicio = null;
         cola = null;
@@ -41,7 +41,7 @@ public class NodoDoble<T> implements Iterable<T> {
         return tamaño;
     }
 
-    // 2. Agregar nodo al final de la lista doblemente enlazada
+    // Agregar nodo al final de la lista doblemente enlazada
     public void add(T nombre) {
         Nodo<T> newNodo = new Nodo<>(nombre);
         if (isEmpty()) {
@@ -53,9 +53,9 @@ public class NodoDoble<T> implements Iterable<T> {
             cola = newNodo;
         }
         tamaño++;
-    }
+    }    
 
-    // 4. Agregar al inicio de la lista
+    // Agregar al inicio de la lista
     public void inFront(T nombre) {
         Nodo<T> newNodo = new Nodo<>(nombre);
         if (isEmpty()) {
@@ -67,11 +67,10 @@ public class NodoDoble<T> implements Iterable<T> {
             inicio = newNodo;
         }
         tamaño++;
-    }
+    }      
 
-    // 5. Agregar al final de la lista (redundante, ya se implementa en el método 'add')
 
-    // 6. Agregar en una posición específica
+    //  Agregar en una posición específica
     public void addAtIndex(T nombre, int posicion) {
         if (posicion < 0 || posicion > tamaño) {
             throw new IndexOutOfBoundsException("Índice fuera de rango");
@@ -94,7 +93,7 @@ public class NodoDoble<T> implements Iterable<T> {
         }
     }
 
-    // 9. Consultar un valor en la lista
+    //  Consultar un valor en la lista
     public T get(int posicion) {
         if (posicion < 0 || posicion >= tamaño) {
             throw new IndexOutOfBoundsException("Índice fuera de rango");
@@ -106,7 +105,7 @@ public class NodoDoble<T> implements Iterable<T> {
         return actual.nombre;
     }
 
-    // 11. Iterador sobre la lista
+    //  Iterador sobre la lista
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -129,7 +128,7 @@ public class NodoDoble<T> implements Iterable<T> {
         };
     }
 
-    // 10. Comparar dos listas para verificar si son iguales
+   // Comparar dos listas para verificar si son iguales
     public boolean equals(NodoDoble<T> otraLista) {
         if (tamaño != otraLista.tamaño) {
             return false;
